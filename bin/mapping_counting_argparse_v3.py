@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor, as_completed
+from typing import Optional
 import sys
 import uuid
 import pysam
@@ -66,7 +67,7 @@ def pair_bams_by_regex(utr_dir: Path, cds_dir: Path, glob_pat: str = "*.bam"):
 
     dot_read_re = re.compile(r"^(?P<key>.+?)\.(?:R1|R2)\.")
 
-    def sample_key(stem: str) -> str | None:
+    def sample_key(stem: str) -> Optional[str]:
         m = dot_read_re.match(stem)
         return m.group("key") if m else None
 
