@@ -38,6 +38,8 @@ params.outdir            = "results"
 params.library_type      = "5UTR"       // "5UTR" or "3UTR"
 params.cds_header        = "citrine"
 params.threads           = 4     // adjust to match your machine's core count
+params.trim_q            = 25          // cutadapt 3' quality-trim cutoff (-q)
+params.star_utr_extra    = ""          // extra STAR args for the UTR-read alignment only (e.g. relaxed filters)
 params.min_bq            = 15
 params.mapq_utr          = 100
 params.mapq_cds          = 100
@@ -150,7 +152,7 @@ process CUTADAPT {
     """
     cutadapt \\
         -j ${params.threads} \\
-        -q 25,25 \\
+        -q ${params.trim_q},${params.trim_q} \\
         -m 30 \\
         --pair-filter=any \\
         --json ${sample_id}_cutadapt.json \\
@@ -204,7 +206,8 @@ process STAR_ALIGN_UTR {
         --outFileNamePrefix   ${sample_id}.${utr_label}. \\
         --outSAMattributes    NH HI AS nM \\
         --outBAMsortingThreadN ${params.threads} \\
-        --limitBAMsortRAM     1000000000000
+        --limitBAMsortRAM     1000000000000 \\
+        ${params.star_utr_extra}
 
     mv ${sample_id}.${utr_label}.Aligned.sortedByCoord.out.bam _tmp.bam
     samtools view -@ ${params.threads} -b -h -F 0x100 -F 0x800 -F 0x4 _tmp.bam \\

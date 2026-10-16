@@ -20,6 +20,8 @@ nextflow -log "${OUTDIR}/logs/nextflow.log" run "${SCRIPT_DIR}/main.nf" \
     --cds_header    "${CDS_HEADER}" \
     --threads       "${THREADS:-4}" \
     --min_reads     "${MIN_READS:-0}" \
+    --trim_q        "${TRIM_Q:-25}" \
+    ${STAR_UTR_EXTRA:+--star_utr_extra "${STAR_UTR_EXTRA}"} \
     --delivery1     "${DELIVERY1:-Lenti}" \
     --delivery2     "${DELIVERY2:-IVTMods}" \
     ${GENOME_FASTA:+--genome_fasta "${GENOME_FASTA}"} \
