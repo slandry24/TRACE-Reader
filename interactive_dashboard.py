@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Interactive Dash dashboard for UTR Translation Efficiency analysis.
+Interactive Dash dashboard for TRACE-Reader analysis.
 
 Features
 --------
@@ -323,7 +323,7 @@ def build_app(init_welch_path: str | None, init_raw_path: str | None) -> Dash:
     # ── Main layout ───────────────────────────────────────────────────────────
     app.layout = dbc.Container([
         dbc.Row([
-            dbc.Col(html.H3("UTR Translation Efficiency Dashboard",
+            dbc.Col(html.H3("TRACE-Reader Dashboard",
                             className="text-primary mt-3 mb-0"), width=12),
         ]),
         html.Hr(className="mt-1 mb-2"),
@@ -463,7 +463,7 @@ def build_app(init_welch_path: str | None, init_raw_path: str | None) -> Dash:
 # ─── Entry point ──────────────────────────────────────────────────────────────
 
 def parse_args():
-    p = argparse.ArgumentParser(description="UTR Translation Efficiency — Interactive Dashboard")
+    p = argparse.ArgumentParser(description="TRACE-Reader — Interactive Dashboard")
     p.add_argument("--welch", default=None,
                    help="Pre-load Welch t-test results CSV (06_analysis/welches_t_test_EPR.csv)")
     p.add_argument("--raw",   default=None,

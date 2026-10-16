@@ -2,7 +2,7 @@
 nextflow.enable.dsl = 2
 
 /*
- * UTR Translation Efficiency Pipeline — V5
+ * TRACE-Reader — V5  (Ribo-TRACE UTR translational efficiency)
  *
  * Maps R1 reads to UTR library, uses C→T edits in CDS-mapped R2 as a proxy
  * for translational activity. Runs Welch's t-test (Dox vs NoDox) and generates

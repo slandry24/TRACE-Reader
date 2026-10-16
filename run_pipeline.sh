@@ -1,5 +1,5 @@
 #!/bin/bash
-# ─── UTR Translation Efficiency Pipeline V5 — Launcher ───────────────────────
+# ─── TRACE-Reader V5 — Launcher ──────────────────────────────────────────────
 # Edit pipeline.conf, then run:  bash run_pipeline.sh
 #                        or:    bash run_pipeline.sh --resume
 set -euo pipefail

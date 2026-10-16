@@ -1,4 +1,4 @@
-name: ribo-trace
+name: trace-reader
 channels:
   - conda-forge
   - bioconda

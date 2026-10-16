@@ -1,5 +1,5 @@
 #!/bin/bash
-# ─── UTR Translation Efficiency Pipeline V5 — Dashboard Launcher ─────────────
+# ─── TRACE-Reader V5 — Dashboard Launcher ────────────────────────────────────
 # Usage: bash launch_dashboard.sh /path/to/results [port]
 set -euo pipefail
 

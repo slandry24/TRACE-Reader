@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Interactive dashboard for UTR translation efficiency results.
+Interactive dashboard for TRACE-Reader results.
 
 Usage:
     python dashboard.py --results /path/to/results
@@ -123,7 +123,7 @@ def build_layout(summary, welch, has_timecourse=False):
     initial_options = [{"label": first_utr, "value": first_utr}] if first_utr else []
 
     return html.Div([
-        html.H2("UTR Translation Efficiency Dashboard",
+        html.H2("TRACE-Reader Dashboard",
                 style={"fontFamily": "Arial", "marginBottom": "8px"}),
 
         # ── Controls ──────────────────────────────────────────────────────────

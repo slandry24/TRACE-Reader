@@ -1,6 +1,6 @@
-# Ribo-TRACE
+# TRACE-Reader
 
-A Nextflow pipeline for measuring cell-type-specific translational efficiency of 5'UTR (or 3'UTR) libraries using Ribo-TRACE-derived C→T editing rates as a proxy for ribosome engagement.
+TRACE-Reader is a Nextflow pipeline for measuring cell-type-specific translational efficiency of 5'UTR (or 3'UTR) libraries from Ribo-TRACE data, using C→T editing rates as a proxy for ribosome engagement.
 
 ## Overview
 
@@ -56,7 +56,7 @@ This installs Nextflow itself plus every tool the pipeline needs — `star`, `sa
 
 Then activate it before running anything:
 ```bash
-conda activate ribo-trace
+conda activate trace-reader
 ```
 
 To update an existing environment after pulling changes:
